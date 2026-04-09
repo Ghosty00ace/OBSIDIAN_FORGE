@@ -1,1 +1,8 @@
 .env
+.env.local
+.env.*.local
+ecommerce-vite/.env.local
+ecommerce-vite/.env.*.local
+ecommerce-vite/node_modules/
+ecommerce-vite/dist/
+ecommerce-vite/.vercel/
