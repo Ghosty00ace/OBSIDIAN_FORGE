@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Forge | Developer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#e2e2e2",
+                        "primary": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#464747",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-background": "#e2e2e2",
+                        "background": "#131313",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface": "#e2e2e2",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#353535",
+                        "secondary": "#c7c6c6",
+                        "on-primary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-container": "#636565",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "outline-variant": "#444748",
+                        "tertiary-container": "#e2e2e2",
+                        "on-primary-fixed": "#1a1c1c",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-container": "#b5b5b5",
+                        "on-secondary": "#303031",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#393939",
+                        "on-primary": "#2f3131",
+                        "surface-container-low": "#1b1b1b",
+                        "surface": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "surface-variant": "#353535",
+                        "outline": "#8e9192",
+                        "inverse-on-surface": "#303030",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary-fixed": "#e3e2e2",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#c6c6c7",
+                        "on-tertiary-container": "#636565",
+                        "on-secondary-fixed-variant": "#464747"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Geist Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/70 backdrop-blur-xl shadow-[0_60px_60px_-15px_rgba(255,255,255,0.06)]">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-white">Obsidian Forge</div>
+<div class="hidden md:flex items-center gap-8 font-['Inter'] tracking-tight">
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Orders</a>
+<a class="text-white border-b-2 border-white pb-1" href="#">Profile</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Wishlist</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="text-white hover:bg-white/10 transition-all p-2 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="text-white hover:bg-white/10 transition-all p-2 rounded-lg active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+</div>
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-outline-variant/30" data-alt="Close-up portrait of a professional male developer with short dark hair in a minimalist dark studio setting with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQfWeI9ZMadfBEeBBGLmMe-RCrndgXTSEowW23Z7RiK0tiKHt7m6eTndLzGhivNmrA0SKTCSt4hdtpvObkOuZ4_IdykRvU6Dge6bZeO8dLONmfrlQ8-08zU3nmfM5Wow0gPcPNu_20jx5Cm6NOU3VGC9iXeiGx5b1ihBI6X-jQIxIdj0ZfZpE09tqhHH1lVmMWB6EkJ3lX96lvchkkXlMizblFSFyxsBoMzZXo276vSY4p2_DTXF5p1uWyXybENnUvPg7RtyOvbg"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-16 bg-neutral-950 flex-col p-4 gap-2 font-['Geist_Mono'] text-sm uppercase tracking-widest border-r border-outline-variant/10">
+<div class="px-2 py-4 mb-4">
+<div class="text-white font-bold text-lg tracking-normal normal-case mb-1">Developer Profile</div>
+<div class="text-neutral-500 text-xs lowercase tracking-normal">Pro Tier</div>
+</div>
+<div class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:bg-neutral-800 rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">package_2</span>
+<span>Order History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white text-black font-bold rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Account Details</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:bg-neutral-800 rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">favorite</span>
+<span>Saved Items</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:bg-neutral-800 rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">shield</span>
+<span>Security</span>
+</a>
+</div>
+<div class="flex flex-col gap-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:bg-neutral-800 rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:bg-neutral-800 rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:text-white text-error">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="pt-24 pb-12 px-6 md:pl-72 md:pr-12 max-w-[1440px] mx-auto min-h-screen bg-background">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="text-5xl font-bold tracking-tighter text-white mb-2">Forge Dashboard</h1>
+<p class="text-neutral-400 font-mono text-sm uppercase tracking-widest">Environment: Production // Status: Synchronized</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Profile Overview Card -->
+<section class="md:col-span-4 lg:col-span-4 bg-surface-container-low p-8 rounded-xl flex flex-col items-center text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50"></div>
+<div class="relative z-10">
+<div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-primary to-neutral-800 mb-6 mx-auto">
+<img alt="User Avatar" class="w-full h-full rounded-full object-cover" data-alt="Professional profile headshot of a male developer with sharp focus, neutral dark background, and soft cinematic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaptQ4bsvkoJxwVur-lf8zrzlxQgJVBpoovMeuvPpqSRA32343IgmeVzFO3EpJW7571ck1mUP9WWHfo60ZReK-zjfWmLCKMSC-ymbJpu5Y-6eRQ_aqBT0bicvsD6fZhoyadLWfByb0qkA9PJ1eKdnhEFevF4WzMeEOpquEBQVRD9OvGmCGbJRpXIK-Odp35uGDU309gJPvlaivVdTPLFlX3K5nB-Z0i3nDL2efH83TvzO49EqDgWGMxhfZd2TsxIPRjvub09DGCUA"/>
+</div>
+<h2 class="text-2xl font-bold text-white mb-1">Marcus Sterling</h2>
+<p class="text-neutral-400 mb-6 font-mono text-xs">m.sterling@obsidian-forge.dev</p>
+<div class="flex flex-col gap-2 w-full text-left bg-surface-container px-4 py-4 rounded-lg border border-outline-variant/10">
+<div class="flex justify-between items-center">
+<span class="text-xs text-neutral-500 uppercase tracking-widest font-mono">Member Since</span>
+<span class="text-sm text-white">Oct 2023</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<span class="text-xs text-neutral-500 uppercase tracking-widest font-mono">Rank</span>
+<span class="text-sm text-primary font-bold">Elite Forge Master</span>
+</div>
+</div>
+<button class="mt-8 w-full py-3 bg-primary text-on-primary font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all active:scale-95">
+                        Edit Profile
+                    </button>
+</div>
+</section>
+<!-- Recent Orders Section -->
+<section class="md:col-span-8 lg:col-span-8 bg-surface-container p-8 rounded-xl">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                        Recent Orders
+                    </h2>
+<button class="text-xs font-mono uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">View All Archive</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-mono text-sm">
+<thead>
+<tr class="text-neutral-500 border-b border-outline-variant/10">
+<th class="pb-4 font-medium uppercase tracking-widest">ID</th>
+<th class="pb-4 font-medium uppercase tracking-widest">Timestamp</th>
+<th class="pb-4 font-medium uppercase tracking-widest">Status</th>
+<th class="pb-4 font-medium uppercase tracking-widest text-right">Credit</th>
+<th class="pb-4 font-medium uppercase tracking-widest text-right">Action</th></tr>
+</thead>
+<tbody class="text-neutral-300">
+<tr class="border-b border-outline-variant/5 hover:bg-white/5 transition-colors group">
+<td class="py-5 font-bold text-white">#OF-9421</td>
+<td class="py-5">2024-05-12</td>
+<td class="py-5">
+<span class="px-2 py-1 bg-primary/10 text-primary border border-primary/20 text-[10px] rounded uppercase">Shipped</span>
+</td>
+<td class="py-5 text-right text-white font-bold">$1,240.00</td>
+<td class="py-5 text-right"><a class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors font-bold" href="#"><span class="material-symbols-outlined text-sm">analytics</span>Track</a></td></tr>
+<tr class="border-b border-outline-variant/5 hover:bg-white/5 transition-colors group">
+<td class="py-5 font-bold text-white">#OF-8812</td>
+<td class="py-5">2024-04-28</td>
+<td class="py-5">
+<span class="px-2 py-1 bg-white/5 text-neutral-400 border border-white/10 text-[10px] rounded uppercase">Delivered</span>
+</td>
+<td class="py-5 text-right text-white font-bold">$850.00</td>
+<td class="py-5 text-right"><a class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors font-bold" href="#"><span class="material-symbols-outlined text-sm">analytics</span>Track</a></td></tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="py-5 font-bold text-white">#OF-8704</td>
+<td class="py-5">2024-04-15</td>
+<td class="py-5">
+<span class="px-2 py-1 bg-white/5 text-neutral-400 border border-white/10 text-[10px] rounded uppercase">Delivered</span>
+</td>
+<td class="py-5 text-right text-white font-bold">$2,100.00</td>
+<td class="py-5 text-right"><a class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-neutral-500 hover:text-primary transition-colors font-bold" href="#"><span class="material-symbols-outlined text-sm">analytics</span>Track</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Wishlist Preview Section -->
+<section class="md:col-span-12 bg-surface-container-low p-8 rounded-xl border border-white/5">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-xl font-bold text-white tracking-tight">Wishlist Preview</h2>
+<p class="text-neutral-500 text-sm">Monitored assets and hardware upgrades</p>
+</div>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Wishlist Item 1 -->
+<div class="group relative bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+<div class="aspect-video w-full relative overflow-hidden">
+<img alt="Mechanical Keyboard" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="High-end mechanical keyboard with dark keycaps and subtle white backlight on a dark slate desk with moody shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKjTwJ7vJgo82iRKEI_NXdEuh1NRXJ-3Dq61YCmL71KIQ-kJk33CTckhZlQO5RXAOmqXUohRIsFWcr3XrDiz6abkKfQURqQBgUb2_6dNLn82J04aCKgAUq3vFV8ik4VQyTcoycwdBKvFZncYQOkXvptTGxxIdBYscfE7Hlv4RSqQMij4Nmy1n27sq-wZyF_IshUD8p3U4Lhs3H9WTLX5jCMwG5oIElIAAuuwqAJ5h7jby56isSlfQ_j2yMKbUjMVhYLIUOE6SzCIo"/>
+<div class="absolute top-3 right-3 bg-neutral-950/80 backdrop-blur p-2 rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-white group-hover:text-primary transition-colors">Carbon-X MK.III</h3>
+<span class="font-mono text-primary text-sm">$320.00</span>
+</div>
+<p class="text-neutral-500 text-xs line-clamp-2 mb-4">Precision-engineered haptic mechanical core with low-latency Obsidian firmware.</p>
+<button class="w-full py-2 bg-white/5 hover:bg-white/10 text-white text-xs font-mono uppercase tracking-widest rounded transition-colors">Add to Terminal</button>
+</div>
+</div>
+<!-- Wishlist Item 2 -->
+<div class="group relative bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+<div class="aspect-video w-full relative overflow-hidden">
+<img alt="Ultra-wide Monitor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="Sleek ultra-wide computer monitor displaying minimalist code interface in a dark, high-tech workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_EDXAS7yDpY0FUbEx7Ymm7ZJF54qyjxukdrfkqdmHUPC6pZKqNdHJ_4YKG-QLJcnFXGtt_xvsb1vZZqx49EFiMijscrMpUQRuVynyNyuh92yxpvCt-E_2VbtIpUtOVJGZMgktbmTmCVhwF_o7IeQ4kp8GXk4lOR7_X4QpcCKdMWEhRzlKB8fbqbnYvSRQgvuAmBk8enyOMsXBTguhzao6F8quluqYzokaM0YPslbfhTdQUq5GGKX19VqVOprY3d-Jz7mp0D0k6nc"/>
+<div class="absolute top-3 right-3 bg-neutral-950/80 backdrop-blur p-2 rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-white group-hover:text-primary transition-colors">Horizon-S Display</h3>
+<span class="font-mono text-primary text-sm">$1,450.00</span>
+</div>
+<p class="text-neutral-500 text-xs line-clamp-2 mb-4">8K Ultrawide curved panel with true-black OLED and zero-frame industrial casing.</p>
+<button class="w-full py-2 bg-white/5 hover:bg-white/10 text-white text-xs font-mono uppercase tracking-widest rounded transition-colors">Add to Terminal</button>
+</div>
+</div>
+<!-- Wishlist Item 3 -->
+<div class="group relative bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+<div class="aspect-video w-full relative overflow-hidden">
+<img alt="Digital Tablet" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="Minimalist professional digital tablet on a clean dark surface with soft rim lighting emphasizing its slim profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCntRbOaIZZMbC_8-XFnc092SIXDBs_uGp4tHgFkgBZeRDB16NlO9-2nzMpRaG8h52IZtICnVJM72TYDtRhd3BXDkroOBDCo1jV_SoKubw5IA-IlGiRQ9CVeUUpgwwLBix_UKhXsw6wP6O2FHDS9bs1-Qekf3LalQnyO6VVXAGUTIbI1QQMKrcfYDvvmim8TvGDQTHTictYw72lVmAUCYEiAVye3TYSZCCziGMosNgyV38IW-n9_aIn8KndOj0gla3cfF2ktDZIUoo"/>
+<div class="absolute top-3 right-3 bg-neutral-950/80 backdrop-blur p-2 rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-white group-hover:text-primary transition-colors">Neural-Tab Pro</h3>
+<span class="font-mono text-primary text-sm">$890.00</span>
+</div>
+<p class="text-neutral-500 text-xs line-clamp-2 mb-4">Pressure-sensitive drafting surface for rapid architectural and system prototyping.</p>
+<button class="w-full py-2 bg-white/5 hover:bg-white/10 text-white text-xs font-mono uppercase tracking-widest rounded transition-colors">Add to Terminal</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Metric / System Status -->
+<footer class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-8 font-mono text-[10px] text-neutral-500 uppercase tracking-[0.2em]">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    Systems Nominal
+                </div>
+<div>Lat: 22ms</div>
+<div>Secure Tunnel Established</div>
+</div>
+<div class="text-neutral-600 text-[10px] font-mono tracking-widest uppercase">
+                © 2024 Obsidian Forge / Industrial Systems Group
+            </div>
+</footer>
+</main>
+</body></html>

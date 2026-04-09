@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OBSIDIAN_FORGE | RECOVER_ACCESS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#464747",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-secondary-container": "#b5b5b5",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "surface-container-highest": "#353535",
+                        "tertiary": "#ffffff",
+                        "surface-bright": "#393939",
+                        "inverse-on-surface": "#303030",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#303031",
+                        "surface-container-high": "#2a2a2a",
+                        "on-background": "#e2e2e2",
+                        "background": "#131313",
+                        "surface-tint": "#c6c6c7",
+                        "on-primary-fixed": "#1a1c1c",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-primary-container": "#636565",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container": "#1f1f1f",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353535",
+                        "primary-fixed": "#e2e2e2",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface": "#e2e2e2",
+                        "on-primary": "#2f3131",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#2f3131",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary": "#c7c6c6",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#636565",
+                        "primary-container": "#e2e2e2",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "tertiary-container": "#e2e2e2",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#454747"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Geist Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #e2e2e2;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 31, 31, 0.7);
+            backdrop-filter: blur(40px);
+        }
+        .metallic-gradient {
+            background: linear-gradient(45deg, #ffffff 0%, #c7c6c6 100%);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<!-- Top Navigation (Manual implementation as Shell is suppressed for Transactional screen) -->
+<nav class="fixed top-0 w-full px-8 h-16 flex justify-between items-center z-50 bg-neutral-950/70 backdrop-blur-2xl border-b border-white/10">
+<div class="font-mono text-xl font-black tracking-tighter text-white">
+            OBSIDIAN_FORGE
+        </div>
+<div class="flex items-center gap-6">
+<a class="font-mono text-xs tracking-tighter uppercase text-neutral-500 hover:text-white transition-colors" href="#">Documentation</a>
+<a class="font-mono text-xs tracking-tighter uppercase text-neutral-500 hover:text-white transition-colors" href="#">Support</a>
+</div>
+</nav>
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+</div>
+<!-- Main Recovery Card -->
+<main class="relative z-10 w-full max-w-md px-6">
+<div class="glass-panel border border-white/5 rounded-xl p-8 lg:p-12 shadow-2xl">
+<!-- Header Section -->
+<header class="mb-10 text-center">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-surface-container-high mb-6 border border-white/10">
+<span class="material-symbols-outlined text-white" data-icon="lock_reset">lock_reset</span>
+</div>
+<h1 class="text-white font-headline text-3xl font-bold tracking-tight mb-3">
+                    RECOVER ACCESS
+                </h1>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                    Enter your terminal identity to receive a reset key. Valid keys expire after 15 minutes of inactivity.
+                </p>
+</header>
+<!-- Recovery Form -->
+<form class="space-y-8">
+<div class="space-y-2">
+<label class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 ml-1" for="email">
+                        System_Identity (Email)
+                    </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-neutral-500 group-focus-within:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="alternate_email">alternate_email</span>
+</div>
+<input class="w-full bg-transparent border-outline-variant/40 border text-white pl-11 pr-4 py-3.5 rounded-lg focus:ring-1 focus:ring-primary/20 focus:border-primary outline-none transition-all font-mono text-sm placeholder:text-neutral-700" id="email" placeholder="root@obsidian-forge.io" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full metallic-gradient text-on-primary font-headline font-semibold py-4 rounded-lg active:scale-[0.98] transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] flex items-center justify-center gap-2 group" type="submit">
+<span>SEND RESET KEY</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<a class="block w-full text-center py-2 text-neutral-500 hover:text-white text-xs font-mono uppercase tracking-tight transition-colors" href="#">
+                        Return to secure login
+                    </a>
+</div>
+</form>
+<!-- Status Footer -->
+<footer class="mt-10 pt-8 border-t border-white/5 flex flex-col gap-4">
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-lowest border border-white/5">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-neutral-500 text-lg" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<p class="font-mono text-[10px] text-neutral-400 uppercase leading-none mb-1">Encryption_Status</p>
+<p class="font-mono text-[11px] text-white">AES-256 BIT ENCRYPTED</p>
+</div>
+</div>
+<div class="flex justify-between items-center px-1">
+<span class="font-mono text-[9px] text-neutral-600 uppercase">System Time: 02:44:12 UTC</span>
+<div class="flex gap-2">
+<div class="w-1 h-1 rounded-full bg-primary/40"></div>
+<div class="w-1 h-1 rounded-full bg-primary/40"></div>
+<div class="w-1 h-1 rounded-full bg-primary/40"></div>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- Footer Utility -->
+<div class="fixed bottom-8 w-full text-center z-10">
+<p class="font-mono text-[10px] text-neutral-700 tracking-widest uppercase">
+            © 2024 Obsidian Forge Environment // High Reliability Framework
+        </p>
+</div>
+<!-- Decorative Mesh (Lower layer) -->
+<div class="fixed inset-0 z-[-1] opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+</body></html>

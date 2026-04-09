@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#c7c6c6",
+              "on-background": "#e2e2e2",
+              "surface-dim": "#131313",
+              "secondary-container": "#464747",
+              "primary-fixed": "#e2e2e2",
+              "tertiary": "#ffffff",
+              "on-tertiary-container": "#636565",
+              "primary-fixed-dim": "#c6c6c7",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container-low": "#1b1b1b",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary": "#2f3131",
+              "secondary-fixed": "#e3e2e2",
+              "tertiary-container": "#e2e2e2",
+              "on-secondary": "#303031",
+              "on-tertiary": "#2f3131",
+              "background": "#0e0e0e",
+              "outline-variant": "#444748",
+              "primary-container": "#e2e2e2",
+              "outline": "#8e9192",
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#e2e2e2",
+              "surface-tint": "#c6c6c7",
+              "on-primary-fixed-variant": "#454747",
+              "surface-container": "#1f1f1f",
+              "on-error": "#690005",
+              "inverse-primary": "#5d5f5f",
+              "error": "#ffb4ab",
+              "on-tertiary-fixed": "#1a1c1c",
+              "surface-variant": "#353535",
+              "tertiary-fixed": "#e2e2e2",
+              "on-secondary-fixed": "#1b1c1c",
+              "on-primary-fixed": "#1a1c1c",
+              "on-surface-variant": "#c4c7c8",
+              "secondary-fixed-dim": "#c7c6c6",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-primary-container": "#636565",
+              "error-container": "#93000a",
+              "inverse-on-surface": "#303030",
+              "on-secondary-container": "#b5b5b5",
+              "surface-container-highest": "#353535",
+              "surface-bright": "#393939",
+              "surface": "#131313",
+              "on-surface": "#e2e2e2",
+              "primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#454747"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["Geist Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { background-color: #0e0e0e; color: #ffffff; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-white uppercase font-headline">Obsidian Forge</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-headline font-semibold tracking-tighter text-neutral-500 hover:text-white transition-colors" href="#">Inventory</a>
+<a class="font-headline font-semibold tracking-tighter text-neutral-500 hover:text-white transition-colors" href="#">Marketplace</a>
+<a class="font-headline font-semibold tracking-tighter text-neutral-500 hover:text-white transition-colors" href="#">Analytics</a>
+<a class="font-headline font-semibold tracking-tighter text-white border-b-2 border-white pb-1" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-white hover:bg-white/10 transition-all rounded-full interaction-scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-white hover:bg-white/10 transition-all rounded-full interaction-scale-95">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a professional developer in a dark room with soft blue rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy7yinLCfDitz5Dx82VpYnSdUa0hfyUQriQWi0RryfmxKUvhHkuPXLAu172AAwTNH9veKuuDuIdEHlGqLiOCxoHRG8aq1Q0Knc_AQdK1LlnoBIRLWSPscmmLve4L6VupVQ_9mzg_cTRA6Hjas19HOsgKI1rftp8mw2Y3FfUmct1gQRBhZ_QcOn5CKXM8PS4qam0WzXvBL2sH2EOP6KDWGOE8zU1yKNhmWXEKNfBx1ZuQPqUfPvqV2X__QSrZIlGKjRh6gNK0Qwt0E"/>
+</div>
+</div>
+</nav>
+<div class="flex pt-16 h-screen overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 border-r border-white/5 bg-[#0e0e0e] flex flex-col h-full py-6 px-4 hidden md:flex">
+<div class="mb-8 px-2">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-6 h-6 bg-white rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-background text-[16px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<span class="text-lg font-black text-white font-headline">Project Obsidian</span>
+</div>
+<span class="font-mono text-sm tracking-tight text-neutral-500">Developer Tier</span>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-neutral-400 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-white bg-white/10 font-bold transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+<span>Plan &amp; Billing</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-neutral-400 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="credit_card">credit_card</span>
+<span>Payment Methods</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-neutral-400 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+<span>Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-neutral-400 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="terminal">terminal</span>
+<span>API Access</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-white/5 pt-6">
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-neutral-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+<span>Documentation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 font-mono text-sm tracking-tight text-neutral-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+<span>Support</span>
+</a>
+<div class="mt-4 px-2">
+<button class="w-full py-2 bg-primary text-on-primary text-xs font-bold rounded-lg hover:opacity-90 transition-opacity">Upgrade to Enterprise</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-background p-8 md:p-12">
+<div class="max-w-6xl mx-auto space-y-16">
+<!-- Page Header -->
+<header class="space-y-4">
+<h1 class="text-5xl font-bold tracking-tighter font-headline text-white">Billing &amp; Subscription</h1>
+<p class="text-neutral-400 max-w-2xl font-body">Manage your forge environment, compute quotas, and enterprise-grade billing cycles from a centralized terminal.</p>
+</header>
+<!-- Current Plan Section (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl border border-white/5 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="verified">verified</span>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 bg-white/10 text-white text-[10px] font-mono uppercase tracking-widest rounded">Active Subscription</span>
+<span class="h-2 w-2 rounded-full bg-white animate-pulse"></span>
+</div>
+<div>
+<h2 class="text-4xl font-bold tracking-tight mb-2">Enterprise Tier</h2>
+<p class="text-neutral-400 font-mono text-sm">Forge ID: OB-772-X9</p>
+</div>
+<div class="grid grid-cols-2 gap-8 pt-4 border-t border-white/5">
+<div>
+<p class="text-neutral-500 font-mono text-[10px] uppercase tracking-widest mb-1">Renewal Date</p>
+<p class="text-xl font-bold text-white font-mono">2025-01-12</p>
+</div>
+<div>
+<p class="text-neutral-500 font-mono text-[10px] uppercase tracking-widest mb-1">Monthly Cost</p>
+<p class="text-xl font-bold text-white font-mono">$499.00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-xl flex flex-col justify-between text-on-primary group hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all">
+<div class="space-y-2">
+<p class="font-mono text-[10px] uppercase tracking-widest font-bold">Usage Quota</p>
+<h3 class="text-3xl font-bold tracking-tighter">82%</h3>
+<div class="w-full bg-on-primary/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-primary h-full w-[82%]"></div>
+</div>
+</div>
+<p class="text-sm font-medium leading-tight">You are approaching your compute limit. Contact your account manager for dynamic scaling options.</p>
+<button class="mt-4 flex items-center justify-between w-full text-sm font-bold border-b border-on-primary/30 pb-1">
+                            View Detailed Metrics
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Plan Selector -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<h2 class="text-2xl font-bold tracking-tight">Available Tiers</h2>
+<div class="flex bg-surface-container-low p-1 rounded-lg border border-white/5">
+<button class="px-4 py-1.5 text-xs font-bold rounded bg-white text-on-primary">Monthly</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded text-neutral-500 hover:text-white transition-colors">Yearly</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Hobby -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-white/5 flex flex-col hover:border-white/20 transition-colors">
+<h3 class="text-xl font-bold mb-1">Hobby</h3>
+<p class="text-neutral-500 text-sm mb-6">For personal experimentation</p>
+<div class="mb-8">
+<span class="text-4xl font-bold font-mono">$0</span>
+<span class="text-neutral-500 font-mono text-xs">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    5 Active Repositories
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    100 API Calls / day
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    Community Support
+                                </li>
+</ul>
+<button class="w-full py-3 border border-white/10 text-sm font-bold rounded-lg hover:bg-white/5 transition-all">Downgrade</button>
+</div>
+<!-- Pro -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-white/5 flex flex-col hover:border-white/20 transition-colors">
+<h3 class="text-xl font-bold mb-1">Pro</h3>
+<p class="text-neutral-500 text-sm mb-6">For growing professional teams</p>
+<div class="mb-8">
+<span class="text-4xl font-bold font-mono">$49</span>
+<span class="text-neutral-500 font-mono text-xs">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    Unlimited Repositories
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    10k API Calls / day
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    Priority Email Support
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-300">
+<span class="material-symbols-outlined text-[18px] text-neutral-500" data-icon="check">check</span>
+                                    Advanced Analytics
+                                </li>
+</ul>
+<button class="w-full py-3 border border-white/10 text-sm font-bold rounded-lg hover:bg-white/5 transition-all">Switch to Pro</button>
+</div>
+<!-- Enterprise -->
+<div class="bg-white p-8 rounded-xl border border-white flex flex-col shadow-[0_0_50px_rgba(255,255,255,0.15)] relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Current Plan</div>
+<h3 class="text-xl font-bold mb-1 text-black">Enterprise</h3>
+<p class="text-neutral-500 text-sm mb-6">Maximum scale &amp; control</p>
+<div class="mb-8">
+<span class="text-4xl font-bold font-mono text-black">$499</span>
+<span class="text-neutral-500 font-mono text-xs">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-start gap-3 text-sm text-neutral-700 font-medium">
+<span class="material-symbols-outlined text-[18px] text-black" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+                                    Unlimited Everything
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-700 font-medium">
+<span class="material-symbols-outlined text-[18px] text-black" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+                                    Dedicated Success Manager
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-700 font-medium">
+<span class="material-symbols-outlined text-[18px] text-black" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+                                    SLA Guarantees (99.99%)
+                                </li>
+<li class="flex items-start gap-3 text-sm text-neutral-700 font-medium">
+<span class="material-symbols-outlined text-[18px] text-black" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+                                    Custom On-Prem Deployment
+                                </li>
+</ul>
+<button class="w-full py-3 bg-black text-white text-sm font-bold rounded-lg hover:opacity-90 transition-all cursor-default">Plan Active</button>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section class="space-y-8">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-bold tracking-tight">Payment Methods</h2>
+<button class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-bold hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                            Add New Card
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 bg-surface-container-low border border-white/5 rounded-xl flex items-center justify-between group hover:border-white/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-neutral-800 rounded flex items-center justify-center border border-white/5 overflow-hidden">
+<span class="material-symbols-outlined text-neutral-500" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-mono text-sm text-white">•••• •••• •••• 4242</p>
+<p class="text-xs text-neutral-500 font-mono uppercase tracking-widest">Expires 12/26 — Primary</p>
+</div>
+</div>
+<button class="text-neutral-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="p-6 bg-surface-container-low border border-white/5 rounded-xl flex items-center justify-between group hover:border-white/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-neutral-800 rounded flex items-center justify-center border border-white/5 overflow-hidden">
+<span class="material-symbols-outlined text-neutral-500" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-mono text-sm text-white">•••• •••• •••• 9901</p>
+<p class="text-xs text-neutral-500 font-mono uppercase tracking-widest">Expires 08/25</p>
+</div>
+</div>
+<button class="text-neutral-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Billing History (Data Table) -->
+<section class="space-y-8">
+<h2 class="text-2xl font-bold tracking-tight">Invoice History</h2>
+<div class="bg-surface-container-low border border-white/5 rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-mono text-sm">
+<thead>
+<tr class="border-b border-white/5 bg-white/5">
+<th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-neutral-500">Invoice ID</th>
+<th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-neutral-500">Date</th>
+<th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-neutral-500">Amount</th>
+<th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-neutral-500">Status</th>
+<th class="px-6 py-4 text-right"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 text-white">INV-2024-12</td>
+<td class="px-6 py-4 text-neutral-400">Dec 12, 2024</td>
+<td class="px-6 py-4 text-white">$499.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-white/10 text-[10px] text-white">Paid</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-neutral-500 hover:text-white transition-colors flex items-center gap-2 ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span class="hidden md:inline">Download PDF</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 text-white">INV-2024-11</td>
+<td class="px-6 py-4 text-neutral-400">Nov 12, 2024</td>
+<td class="px-6 py-4 text-white">$499.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-white/10 text-[10px] text-white">Paid</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-neutral-500 hover:text-white transition-colors flex items-center gap-2 ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span class="hidden md:inline">Download PDF</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 text-white">INV-2024-10</td>
+<td class="px-6 py-4 text-neutral-400">Oct 12, 2024</td>
+<td class="px-6 py-4 text-white">$499.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-white/10 text-[10px] text-white">Paid</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-neutral-500 hover:text-white transition-colors flex items-center gap-2 ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span class="hidden md:inline">Download PDF</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Shell -->
+<footer class="mt-20 w-full border-t border-white/5 py-8 flex flex-col md:flex-row justify-between items-center px-8 w-full">
+<p class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 mb-4 md:mb-0">© 2024 Obsidian Forge. Built for high-performance precision.</p>
+<div class="flex gap-8">
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-600 hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-600 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-600 hover:text-white transition-colors" href="#">Security</a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-600 hover:text-white transition-colors" href="#">Status</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

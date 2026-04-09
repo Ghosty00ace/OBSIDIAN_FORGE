@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#393939",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "outline-variant": "#444748",
+                        "tertiary": "#ffffff",
+                        "surface-dim": "#131313",
+                        "primary-container": "#e2e2e2",
+                        "background": "#000000",
+                        "surface-container-highest": "#353535",
+                        "secondary-container": "#464747",
+                        "outline": "#8e9192",
+                        "on-secondary-fixed-variant": "#464747",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-background": "#e2e2e2",
+                        "surface-container-low": "#1b1b1b",
+                        "on-surface": "#e2e2e2",
+                        "inverse-primary": "#5d5f5f",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-container": "#636565",
+                        "surface-container": "#1f1f1f",
+                        "on-secondary": "#303031",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#c7c6c6",
+                        "on-surface-variant": "#c4c7c8",
+                        "inverse-on-surface": "#303030",
+                        "primary": "#ffffff",
+                        "tertiary-container": "#e2e2e2",
+                        "surface-tint": "#c6c6c7",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353535",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-secondary-container": "#b5b5b5",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-error": "#690005",
+                        "on-primary-container": "#636565",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-primary": "#2f3131",
+                        "on-primary-fixed-variant": "#454747",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#1a1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="font-body text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white font-['Inter']">OBSIDIAN FORGE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-neutral-400 font-['Inter'] tracking-tighter font-semibold hover:text-white transition-colors duration-200" href="#">Marketplace</a>
+<a class="text-neutral-400 font-['Inter'] tracking-tighter font-semibold hover:text-white transition-colors duration-200" href="#">Documentation</a>
+<a class="text-neutral-400 font-['Inter'] tracking-tighter font-semibold hover:text-white transition-colors duration-200" href="#">Hardware</a>
+<a class="text-neutral-400 font-['Inter'] tracking-tighter font-semibold hover:text-white transition-colors duration-200" href="#">Support</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-white font-['Inter'] tracking-tighter font-semibold hover:text-white transition-colors duration-200 Active: opacity-80 scale-[0.99] transition-all">Sign In</button>
+</div>
+</nav>
+<main class="min-h-screen flex flex-col items-center justify-center pt-24 pb-12 px-6">
+<!-- Signup Shell -->
+<div class="w-full max-w-[420px] space-y-10">
+<!-- Header Group -->
+<div class="space-y-3 text-center md:text-left">
+<h1 class="text-4xl font-extrabold tracking-tighter text-primary">INITIALIZE ACCESS</h1>
+<p class="text-on-surface-variant font-medium tracking-tight">Enter your credentials to forge your profile.</p>
+</div>
+<!-- Form -->
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block font-['Geist_Mono'] text-[10px] uppercase tracking-[0.2em] text-outline" for="full_name">Full Name</label>
+<input class="w-full bg-transparent border border-[#222222] px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none rounded-none placeholder:text-white/10 font-['Geist_Mono']" id="full_name" placeholder="ALEXANDER VANCE" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-['Geist_Mono'] text-[10px] uppercase tracking-[0.2em] text-outline" for="email">Email Address</label>
+<input class="w-full bg-transparent border border-[#222222] px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none rounded-none placeholder:text-white/10 font-['Geist_Mono']" id="email" placeholder="VANCE@FORGE.CORE" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-['Geist_Mono'] text-[10px] uppercase tracking-[0.2em] text-outline" for="password">Security Key</label>
+<input class="w-full bg-transparent border border-[#222222] px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none rounded-none placeholder:text-white/10 font-['Geist_Mono']" id="password" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary py-4 text-xs font-bold uppercase tracking-[0.15em] hover:bg-neutral-200 transition-all active:scale-[0.98] rounded-lg">
+                        Create Account
+                    </button>
+</div><div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-white/10"></div>
+<span class="flex-shrink mx-4 font-['Geist_Mono'] text-[10px] uppercase tracking-[0.2em] text-outline">OR INITIALIZE WITH</span>
+<div class="flex-grow border-t border-white/10"></div>
+</div><div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-center gap-3 w-full bg-transparent border border-[#222222] py-3 text-[10px] font-bold uppercase tracking-[0.15em] font-['Geist_Mono'] hover:bg-white/5 transition-all active:scale-[0.98] rounded-none" type="button">
+<span class="material-symbols-outlined text-sm">google</span>
+        Google
+    </button>
+<button class="flex items-center justify-center gap-3 w-full bg-transparent border border-[#222222] py-3 text-[10px] font-bold uppercase tracking-[0.15em] font-['Geist_Mono'] hover:bg-white/5 transition-all active:scale-[0.98] rounded-none" type="button">
+<span class="material-symbols-outlined text-sm">terminal</span>
+        GitHub
+    </button>
+<button class="flex items-center justify-center gap-3 w-full bg-transparent border border-[#222222] py-3 text-[10px] font-bold uppercase tracking-[0.15em] font-['Geist_Mono'] hover:bg-white/5 transition-all active:scale-[0.98] rounded-none" type="button">
+<span class="material-symbols-outlined text-sm">apple</span>
+        Apple
+    </button>
+</div>
+</form>
+<!-- Secondary Actions -->
+<div class="pt-8 text-center border-t border-white/5">
+<p class="text-xs text-on-surface-variant tracking-wide font-medium">
+                    Already have an account? 
+                    <a class="text-primary hover:underline underline-offset-4 ml-1 transition-all" href="#">Sign In</a>
+</p>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[800px] h-[800px] opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent blur-[120px] rounded-full"></div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#0e0e0e] border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-neutral-500">
+            © 2024 OBSIDIAN FORGE. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex gap-8">
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-200 transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-200 transition-colors" href="#">Terms of Service</a>
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-200 transition-colors" href="#">API Status</a>
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-neutral-500 hover:text-neutral-200 transition-colors" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

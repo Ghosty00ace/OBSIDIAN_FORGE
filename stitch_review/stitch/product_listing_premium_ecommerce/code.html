@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Market | OBSIDIAN FORGE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Geist+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary-container": "#e2e2e2",
+                "surface-container-low": "#1b1b1b",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "primary-fixed": "#e2e2e2",
+                "on-primary-fixed": "#1a1c1c",
+                "surface-bright": "#393939",
+                "inverse-primary": "#5d5f5f",
+                "primary": "#ffffff",
+                "secondary-fixed": "#e3e2e2",
+                "on-secondary-fixed": "#1b1c1c",
+                "on-tertiary-container": "#636565",
+                "primary-fixed-dim": "#c6c6c7",
+                "on-surface-variant": "#c4c7c8",
+                "on-surface": "#e2e2e2",
+                "background": "#131313",
+                "surface-tint": "#c6c6c7",
+                "on-secondary-fixed-variant": "#464747",
+                "on-primary": "#2f3131",
+                "inverse-on-surface": "#303030",
+                "on-primary-fixed-variant": "#454747",
+                "surface": "#131313",
+                "tertiary-container": "#e2e2e2",
+                "surface-variant": "#353535",
+                "outline-variant": "#444748",
+                "secondary-container": "#464747",
+                "on-tertiary-fixed-variant": "#454747",
+                "tertiary": "#ffffff",
+                "on-error-container": "#ffdad6",
+                "surface-container-highest": "#353535",
+                "on-tertiary": "#2f3131",
+                "error-container": "#93000a",
+                "on-primary-container": "#636565",
+                "inverse-surface": "#e2e2e2",
+                "surface-container-lowest": "#0e0e0e",
+                "surface-container-high": "#2a2a2a",
+                "surface-container": "#1f1f1f",
+                "error": "#ffb4ab",
+                "outline": "#8e9192",
+                "tertiary-fixed": "#e2e2e2",
+                "on-secondary-container": "#b5b5b5",
+                "secondary": "#c7c6c6",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-secondary": "#303031",
+                "secondary-fixed-dim": "#c7c6c6",
+                "surface-dim": "#131313",
+                "on-error": "#690005",
+                "on-background": "#e2e2e2"
+              },
+              fontFamily: {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"],
+                "mono": ["Geist Mono"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #000000; color: #e2e2e2; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(40px); }
+        .product-card-glow:hover { box-shadow: 0 0 40px rgba(255, 255, 255, 0.03); }
+        input[type="range"] { accent-color: #ffffff; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl font-sans tracking-tight antialiased">
+<div class="flex justify-between items-center h-16 px-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-white">OBSIDIAN_FORGE</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-white font-semibold border-b border-white" href="#">Market</a>
+<a class="text-zinc-500 hover:text-zinc-200 transition-colors" href="#">Documentation</a>
+<a class="text-zinc-500 hover:text-zinc-200 transition-colors" href="#">Labs</a>
+<a class="text-zinc-500 hover:text-zinc-200 transition-colors" href="#">Changelog</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm">search</span>
+<input class="bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-1.5 text-sm focus:outline-none focus:border-white/30 transition-all w-64" placeholder="Search components..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-white hover:bg-white/10 transition-all duration-300 rounded-lg scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-white hover:bg-white/10 transition-all duration-300 rounded-lg scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Sidebar: Filter Controls -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-10">
+<section>
+<h3 class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-6">Category</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm group-hover:text-white transition-colors">Processors</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm text-zinc-400 group-hover:text-white transition-colors">Memory Modules</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm text-zinc-400 group-hover:text-white transition-colors">Neural Units</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-sm text-zinc-400 group-hover:text-white transition-colors">Storage Blades</span>
+</label>
+</div>
+</section>
+<section>
+<h3 class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-6">Price Range</h3>
+<input class="w-full h-1 bg-surface-container-high rounded-full appearance-none cursor-pointer mb-4" max="5000" min="0" step="100" type="range"/>
+<div class="flex justify-between font-mono text-[10px] text-zinc-500">
+<span>$0</span>
+<span>$5,000</span>
+</div>
+<div class="mt-4 flex gap-2 items-center">
+<span class="text-xs text-zinc-400">$</span>
+<input class="bg-transparent border-b border-outline-variant focus:border-white transition-colors w-full py-1 text-sm outline-none" type="text" value="1,200"/>
+</div>
+</section>
+<section>
+<h3 class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-6">Minimum Rating</h3>
+<div class="space-y-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-zinc-700">star</span>
+<span class="text-[10px] font-mono ml-2 text-zinc-500">&amp; UP</span>
+</div>
+</div>
+</section>
+<button class="w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-zinc-200 transition-colors">
+                    Reset Filters
+                </button>
+</aside>
+<!-- Product Feed -->
+<div class="flex-1">
+<!-- Sorting & Header -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tighter text-white mb-2">High Performance Hardware</h1>
+<p class="text-zinc-500 text-sm">Showing 32 specialized units for local computation.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Sort by:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-white focus:ring-0 cursor-pointer">
+<option>Popularity</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] product-card-glow">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up of a high-end black computer processor with intricate circuitry and minimal white branding under futuristic cold studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPu6n-0x9t1RQWrOKyC30njnZK93G344Ki5eEKvRMEaTO5TTUYtTsOpS6op8-vXfuqmg_FErNC-oGN4CO4NFL3QiUPaCxt5cuD7I0UkMU_wpXqcX7vcEIX1gUZ9Nui5KzWqrgEdHbxvjYt_xgUj1UkGhJ9X8owjs5WUXSUKHsrsmEvz_8CAjdkU2jc-zJibSrBdmlo1Jy2Q3py-fVIAR4K2Pb8gzTvJHBj49KTt_GyoLu2hZRm0TAZYKJNez-16cUWkyAgunZLhvY"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-white border border-white/10">NEW</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold tracking-tight">KINETIC-9 CORE</h3>
+<span class="font-mono text-sm text-white">$1,299.00</span>
+</div>
+<p class="text-zinc-500 text-xs mb-6 line-clamp-2">Enterprise-grade silicon optimized for LLM inference and real-time data stream processing.</p>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-mono text-zinc-600 uppercase">SKU: KF-902-X</span>
+<button class="text-[10px] font-bold uppercase tracking-widest text-white hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] product-card-glow">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" data-alt="Sleek black aluminum server component with cooling fins and subtle white LEDs in a dark technological environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8OQ4Uf9mqB0Nt5Ls2kMbf-6qmEToQvsBY9fkklQJysy3or88KCoC_zur57Eao5SCMJSKKDBhozk245ex_h2rah5amMxt5qJuOsrjPixvUeP63LJVBITAsiyT2oU55O_sasa3-Rq-j7AztImrlwTQfAY-kCsoXPTIvoUJ19un4AE79GgD178B50lVVVFZHJw3luUmiW9zisUWKku282WboL71p-iP9tl_8OXj0noTFc60VFcbjYod8DlqrqYvyYjFyvojZgUmHdDU"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold tracking-tight">VOID BLADE 2TB</h3>
+<span class="font-mono text-sm text-white">$450.00</span>
+</div>
+<p class="text-zinc-500 text-xs mb-6 line-clamp-2">Ultra-low latency NVMe storage module with hardware-level encryption and thermal shielding.</p>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-mono text-zinc-600 uppercase">SKU: VB-ST-2T</span>
+<button class="text-[10px] font-bold uppercase tracking-widest text-white hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] product-card-glow">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract view of fiber optic cables and server ports with glowing blue data lights in a professional dark data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY-aEKavEK6g_g6bNORspcgFonOP9Q-v60JE38CEFbkb7KBKTuBaZk3h8Utyc0afAKgc5hS68yo0gw5pnfaXRwG2fGNNNxlyDRMLM9u8THn5crpXpfTWpgQPYT97uQHABwoRtb8UQF3hMI07uYYKTy9fg58BFJ44oQnnGoVQdJSUNB2UFwdZiXAWVV-6QPf4ltR5l7TtKYd6sCR1BbNdNayYD1EZCzKHPoRUcyj4Bv468cCRqGQqF-nmNNIHgeHtL0m8QQTkpMONE"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold tracking-tight">SYNAPSE LINK</h3>
+<span class="font-mono text-sm text-white">$275.00</span>
+</div>
+<p class="text-zinc-500 text-xs mb-6 line-clamp-2">High-bandwidth interconnect for distributed computing arrays and neural node synchronization.</p>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-mono text-zinc-600 uppercase">SKU: SL-CON-V1</span>
+<button class="text-[10px] font-bold uppercase tracking-widest text-white hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] product-card-glow">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" data-alt="Clean minimal shot of a circuit board detail with gold contacts and matte black soldermask in high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsIgnGPhMY8PYDVpFJLthIeJdeQT3XXh_csvq7e5eWlUtiskY29NcxAA6CjKgPIZ0UsDA6hCUGkblP7BCcG58thhCTMLNnfIVQX0jI-hZcM5KZ2tpqQIap5C2JXtFKZAFjIJVaxaRExWWsGrcNm9HsMY2_RdvrQZFjdz0axPNOCvqVMX57lzoDlFi59_r286CyeiG3fkKwoRsQNV_YLLziJh_exHeT72hlZ2XWf7gIu9ZVx0fnHEd9aQbHftOUpPKCvLJSj14QnEs"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold tracking-tight">ATLAS MEMORY 64G</h3>
+<span class="font-mono text-sm text-white">$890.00</span>
+</div>
+<p class="text-zinc-500 text-xs mb-6 line-clamp-2">ECC-ready memory module for mission-critical applications and high-density virtualization.</p>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-mono text-zinc-600 uppercase">SKU: AM-64-ECC</span>
+<button class="text-[10px] font-bold uppercase tracking-widest text-white hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] product-card-glow">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" data-alt="Intricate microchip architecture under a microscope with neon reflections and deep black shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmhRABPVKYa7o6KPtWg3E6kFffI5ar0UErAGgvj2ApvHE4vOE1h5G87h9AGHorKH_oros6kZeOa4HqIB5wiTFg1Ivb7RDO_Ezr1_m4z9mEfKZGIoHfQJW1RqxAdHe8J1Csb3eXbNEalgP64wJY-ulPwkWb35Mvl8qFmE10YnWjWQnhhywCtnF4BljocKFNhUoDp_gbUxOteeMzscC0OvUHdJA7QPl0-A7WGiCCyw_7K3WkKhg6La2v3CVfiQbTkk2aXdy-uuiYiGU"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold tracking-tight">NEURAL CORE X</h3>
+<span class="font-mono text-sm text-white">$2,150.00</span>
+</div>
+<p class="text-zinc-500 text-xs mb-6 line-clamp-2">Dedicated tensor accelerator designed for training small-scale models on the edge.</p>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-mono text-zinc-600 uppercase">SKU: NC-X-AI</span>
+<button class="text-[10px] font-bold uppercase tracking-widest text-white hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] product-card-glow">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up of matte black mechanical equipment parts with clean industrial lines and sharp edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNqaJSbHSAw99yAahUbddvojshk2Mzl1I-ILedevaBp0AbgvNyVJRsbg4_G5kGcAHOJSIpv7XInFRF55P75zA-ZTVoOE4jzGM7tbbjxl6nrvNtTNslwLEtqDB2KhZzymcPbTQA6bjBq2Lb7-3HVSpNqGJCwPpsnwY3FgEn-ordqWczCuMdrSP3yCZVjqb-WDg8jeXdzMzFd4dlO6PcjiXZlA_pvexzGqHCTPgpb_Xe4MqtvZng4qm9KIAyuMwsPsgxXDTkLm6E65s"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white font-bold tracking-tight">TITAN CHASSIS</h3>
+<span class="font-mono text-sm text-white">$599.00</span>
+</div>
+<p class="text-zinc-500 text-xs mb-6 line-clamp-2">Modular rack-mount housing with integrated liquid cooling and smart power distribution.</p>
+<div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-mono text-zinc-600 uppercase">SKU: TC-M1-BLK</span>
+<button class="text-[10px] font-bold uppercase tracking-widest text-white hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center items-center gap-4">
+<button class="p-2 border border-white/10 rounded hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="font-mono text-[10px] tracking-widest text-white">01 / 08</span>
+<button class="p-2 border border-white/10 rounded hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 pt-20 pb-10 bg-black">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-6 max-w-screen-2xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<span class="text-lg font-black text-white">OBSIDIAN FORGE</span>
+<p class="mt-4 text-zinc-600 font-mono text-[10px] leading-relaxed uppercase tracking-widest">Constructing the future of compute. Precision hardware for the elite engineer.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-mono text-xs text-white uppercase tracking-widest">Platform</h4>
+<a class="font-mono text-xs uppercase tracking-widest text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Hardware</a>
+<a class="font-mono text-xs uppercase tracking-widest text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Software</a>
+<a class="font-mono text-xs uppercase tracking-widest text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Security</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-mono text-xs text-white uppercase tracking-widest">Legal</h4>
+<a class="font-mono text-xs uppercase tracking-widest text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Privacy</a>
+<a class="font-mono text-xs uppercase tracking-widest text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Terms</a>
+<a class="font-mono text-xs uppercase tracking-widest text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Status</a>
+</div>
+<div class="col-span-2 md:col-span-1 flex flex-col justify-end">
+<p class="font-mono text-xs uppercase tracking-widest text-zinc-600">© 2024 OBSIDIAN FORGE. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+</body></html>

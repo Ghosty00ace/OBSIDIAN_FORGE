@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-highest": "#353535",
+                        "on-primary-fixed-variant": "#454747",
+                        "outline": "#8e9192",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "tertiary-container": "#e2e2e2",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-container": "#e2e2e2",
+                        "outline-variant": "#444748",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-variant": "#353535",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-container": "#464747",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "inverse-surface": "#e2e2e2",
+                        "secondary-fixed": "#e3e2e2",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#636565",
+                        "surface-container-low": "#1b1b1b",
+                        "on-error": "#690005",
+                        "surface-tint": "#c6c6c7",
+                        "secondary": "#c7c6c6",
+                        "primary-fixed": "#e2e2e2",
+                        "on-primary-container": "#636565",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary": "#ffffff",
+                        "surface-container": "#1f1f1f",
+                        "on-secondary-container": "#b5b5b5",
+                        "on-tertiary": "#2f3131",
+                        "on-primary": "#2f3131",
+                        "inverse-primary": "#5d5f5f",
+                        "on-secondary": "#303031"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Geist Mono"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0e0e0e; color: #e2e2e2; font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(19, 19, 19, 0.7); backdrop-filter: blur(40px); }
+        .vantablack { background-color: #000000; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="overflow-hidden flex h-screen">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="hidden md:flex flex-col w-64 h-full py-8 bg-[#0e0e0e] border-r border-white/5 transition-all">
+<div class="px-6 mb-12">
+<h1 class="text-xl font-black text-white tracking-tighter">Support Oracle</h1>
+<p class="font-['Geist_Mono'] text-[10px] text-gray-500 tracking-widest uppercase mt-1">System Active</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 text-white border-r-2 border-white pl-4 py-3 font-['Geist_Mono'] text-sm tracking-tight transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                Chat
+            </a>
+<a class="flex items-center gap-4 text-gray-500 pl-4 py-3 font-['Geist_Mono'] text-sm tracking-tight hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                Knowledge
+            </a>
+<a class="flex items-center gap-4 text-gray-500 pl-4 py-3 font-['Geist_Mono'] text-sm tracking-tight hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                Tickets
+            </a>
+<a class="flex items-center gap-4 text-gray-500 pl-4 py-3 font-['Geist_Mono'] text-sm tracking-tight hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-white/5">
+<div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-on-primary text-xs font-bold">OA</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-white truncate">Oracle AI</p>
+<p class="text-[10px] text-gray-500 truncate">v4.0.2-stable</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col relative bg-[#131313] overflow-y-auto no-scrollbar">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-4 py-3 w-full bg-[#131313] backdrop-blur-xl bg-opacity-70 border-b border-white/10 shadow-2xl shadow-white/5">
+<div class="flex items-center gap-4">
+<span class="md:hidden text-lg font-bold text-white tracking-tighter">Support Oracle</span>
+<div class="hidden md:flex gap-6 items-center">
+<span class="text-white font-bold font-['Inter'] text-sm">Dashboard</span>
+<span class="text-gray-400 font-['Inter'] text-sm hover:text-white transition-colors cursor-pointer">Analytics</span>
+<span class="text-gray-400 font-['Inter'] text-sm hover:text-white transition-colors cursor-pointer">Logs</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-white hover:bg-white/10 transition-colors rounded-lg flex items-center justify-center scale-95 active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<button class="p-2 text-white hover:bg-white/10 transition-colors rounded-lg flex items-center justify-center scale-95 active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Obsidian Forge Hero Section -->
+<section class="p-8 md:p-16 space-y-12">
+<div class="max-w-4xl space-y-6">
+<h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[1.1]">
+                    Forging the future of <span class="text-secondary-fixed-dim">Automated Support.</span>
+</h2>
+<p class="text-xl text-on-surface-variant font-light max-w-2xl leading-relaxed">
+                    A high-performance ecosystem where speed meets absolute precision. Every interaction carved from the void of data.
+                </p>
+<div class="flex gap-4 pt-4">
+<button class="px-8 py-4 bg-white text-on-primary font-bold rounded-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all">
+                        Initialize Terminal
+                    </button>
+<button class="px-8 py-4 border border-outline-variant/40 text-white font-bold rounded-lg hover:bg-white/5 transition-all">
+                        Documentation
+                    </button>
+</div>
+</div>
+<!-- Asymmetric Bento Grid Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 h-[400px] rounded-xl overflow-hidden relative group">
+<img alt="Cyberpunk data center with glowing green wires" class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="cinematic close-up of high-tech server racks with glowing green fiber optic cables in a dark minimalist data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHN5afO8Bz1mVIKctzmxaBe7nSTMeUxthkOEC2cW134GTsZSAnqeH2E3CVpRnbXghSyQPHci6v4PkJZ3M78rOMVLjsyATUIHqYy6DBlxjkE3ELb4045P3lnUEr7TTouSK0ugZFB0dASgmjnymXbXcbzQ5oXiksu9brjNHAIiPtk8IUkn-lIM7mIi_ZIZaGh379yw1Z_c_loMoVNPZPXVHTiuMo7OnpSPsYmkISZaAhMZa9ceTLHzCxrWsQMIb0Fq1_GDUFpwYrB0I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-8 flex flex-col justify-end">
+<span class="font-mono text-xs text-white/50 tracking-widest uppercase mb-2">Core Processor</span>
+<h3 class="text-2xl font-bold text-white">Advanced Neural Infrastructure</h3>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-8 border border-white/5 flex flex-col justify-between">
+<div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="font-mono text-3xl font-bold text-white">0.02ms</p>
+<p class="text-sm text-gray-500 uppercase tracking-tighter">Response Latency</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 border border-white/5 flex flex-col justify-between">
+<div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="security">security</span>
+</div>
+<div>
+<p class="font-mono text-3xl font-bold text-white">99.9%</p>
+<p class="text-sm text-gray-500 uppercase tracking-tighter">Encryption Shield</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Spacing for Chat Overlay -->
+<div class="h-32"></div>
+</main>
+<!-- Expanded Chatbot Widget Overlay (Vantablack Minimalist) -->
+<div class="fixed bottom-6 right-6 z-50 w-[380px] h-[600px] vantablack rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] flex flex-col border border-white/10 overflow-hidden">
+<!-- Terminal Header -->
+<div class="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-[#050505]">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+<h4 class="font-['Geist_Mono'] text-xs font-bold tracking-widest text-white uppercase">Support Oracle Terminal</h4>
+</div>
+<div class="flex gap-2">
+<button class="text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="minimize">minimize</span>
+</button>
+<button class="text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Chat Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 no-scrollbar bg-[#000000]">
+<!-- Timestamp -->
+<div class="flex justify-center">
+<span class="font-mono text-[10px] text-gray-600 bg-white/5 px-3 py-1 rounded-full uppercase tracking-widest">Connection Established: 14:02:55</span>
+</div>
+<!-- AI Message -->
+<div class="flex flex-col gap-2 max-w-[85%]">
+<span class="font-mono text-[10px] text-gray-500 uppercase">Oracle_v4</span>
+<div class="bg-surface-container-low/50 p-4 rounded-xl rounded-tl-none border border-white/5">
+<p class="text-sm text-on-surface leading-relaxed">
+                        Interface initialized. I am analyzing the repository for potential bottlenecks in the authentication flow. How can I assist with your deployment today?
+                    </p>
+</div>
+</div>
+<!-- Operator Message -->
+<div class="flex flex-col gap-2 max-w-[85%] ml-auto items-end">
+<span class="font-mono text-[10px] text-gray-500 uppercase">Operator_Admin</span>
+<div class="bg-white p-4 rounded-xl rounded-tr-none">
+<p class="text-sm text-black leading-relaxed font-semibold">
+                        Check the latency on the Tokyo cluster. We're seeing occasional spikes in the last 15 minutes.
+                    </p>
+</div>
+</div>
+<!-- AI Message with Technical Data -->
+<div class="flex flex-col gap-2 max-w-[90%]">
+<span class="font-mono text-[10px] text-gray-500 uppercase">Oracle_v4</span>
+<div class="bg-surface-container-low/50 p-4 rounded-xl rounded-tl-none border border-white/5 space-y-3">
+<p class="text-sm text-on-surface">Diagnostics complete. Found synchronization delay in <span class="font-mono text-white underline underline-offset-4">node-ap-northeast-1</span>.</p>
+<div class="bg-black/40 p-3 rounded font-mono text-[11px] text-secondary-fixed-dim border border-white/5">
+<p>&gt; latency_status: fluctuating</p>
+<p>&gt; packet_loss: 0.04%</p>
+<p>&gt; action: rerouting_traffic</p>
+</div>
+</div>
+</div>
+<!-- AI Typing Indicator -->
+<div class="flex items-center gap-1">
+<div class="w-1 h-1 bg-white rounded-full animate-bounce"></div>
+<div class="w-1 h-1 bg-white rounded-full animate-bounce [animation-delay:0.2s]"></div>
+<div class="w-1 h-1 bg-white rounded-full animate-bounce [animation-delay:0.4s]"></div>
+</div>
+</div>
+<!-- Terminal Input Bar -->
+<div class="p-5 border-t border-white/10 bg-[#050505]">
+<div class="relative flex items-center">
+<span class="absolute left-4 font-mono text-gray-500">$</span>
+<input class="w-full bg-black border border-outline-variant/40 rounded-lg py-3 pl-10 pr-12 text-sm font-['Geist_Mono'] text-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white/20 placeholder:text-gray-700 transition-all" placeholder="Type your command..." type="text"/>
+<button class="absolute right-3 p-1.5 text-black bg-white rounded hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="mt-3 flex justify-between px-1">
+<div class="flex gap-3">
+<button class="text-[10px] font-mono text-gray-600 hover:text-white transition-colors">/upload</button>
+<button class="text-[10px] font-mono text-gray-600 hover:text-white transition-colors">/logs</button>
+</div>
+<span class="text-[10px] font-mono text-gray-700">AES-256 SECURED</span>
+</div>
+</div>
+</div>
+</body></html>

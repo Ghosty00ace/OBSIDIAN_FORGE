@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-variant": "#353535",
+            "primary": "#ffffff",
+            "on-secondary-fixed-variant": "#464747",
+            "background": "#0e0e0e", /* Vantablack inspired base */
+            "on-secondary-container": "#b5b5b5",
+            "surface-bright": "#393939",
+            "primary-fixed": "#e2e2e2",
+            "surface-container-highest": "#353535",
+            "on-secondary-fixed": "#1b1c1c",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "inverse-on-surface": "#303030",
+            "inverse-primary": "#5d5f5f",
+            "on-tertiary-container": "#636565",
+            "secondary": "#c7c6c6",
+            "error-container": "#93000a",
+            "secondary-container": "#464747",
+            "on-background": "#e2e2e2",
+            "on-surface-variant": "#c4c7c8",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#454747",
+            "surface-dim": "#131313",
+            "outline": "#8e9192",
+            "tertiary-fixed": "#e2e2e2",
+            "inverse-surface": "#e2e2e2",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "on-primary-fixed": "#1a1c1c",
+            "surface-container-low": "#1b1b1b",
+            "on-primary-container": "#636565",
+            "on-primary-fixed-variant": "#454747",
+            "primary-container": "#e2e2e2",
+            "on-surface": "#e2e2e2",
+            "tertiary": "#ffffff",
+            "secondary-fixed-dim": "#c7c6c6",
+            "secondary-fixed": "#e3e2e2",
+            "tertiary-container": "#e2e2e2",
+            "surface-container": "#1f1f1f",
+            "primary-fixed-dim": "#c6c6c7",
+            "surface-container-lowest": "#0e0e0e",
+            "on-secondary": "#303031",
+            "on-tertiary": "#2f3131",
+            "on-primary": "#2f3131",
+            "surface": "#131313",
+            "outline-variant": "#444748",
+            "surface-tint": "#c6c6c7",
+            "surface-container-high": "#2a2a2a",
+            "on-tertiary-fixed": "#1a1c1c"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"],
+            "mono": ["Geist Mono"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { background-color: #0e0e0e; color: #e2e2e2; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .glass-nav { background: rgba(14, 14, 14, 0.7); backdrop-filter: blur(40px); }
+    input::placeholder { color: #444748; }
+    .asymmetric-grid { display: grid; grid-template-columns: 1fr 1.5fr; }
+    @media (max-width: 1024px) { .asymmetric-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-background">
+<!-- TopNavBar Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
+<nav class="flex items-center justify-between px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white uppercase font-headline">OBSIDIAN_FORGE</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-sans text-sm tracking-tight font-medium text-zinc-500 hover:text-white transition-colors duration-200" href="#">Docs</a>
+<a class="font-sans text-sm tracking-tight font-medium text-zinc-500 hover:text-white transition-colors duration-200" href="#">Updates</a>
+<a class="font-sans text-sm tracking-tight font-medium text-zinc-500 hover:text-white transition-colors duration-200" href="#">Status</a>
+<a class="font-sans text-sm tracking-tight font-medium text-white border-b-2 border-white pb-1" href="#">Community</a>
+</div>
+<div class="flex items-center space-x-5">
+<span class="material-symbols-outlined text-white cursor-pointer hover:opacity-70 transition-opacity">help_center</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:opacity-70 transition-opacity">settings</span>
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-lg text-sm font-semibold active:scale-95 transition-transform">Account</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Hero / Search Section -->
+<section class="mb-32">
+<div class="max-w-4xl">
+<span class="font-mono text-xs uppercase tracking-[0.3em] text-outline mb-4 block">System_Node: Assistance_Protocol</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.9]">
+          How can we <br/>assist your forge?
+        </h1>
+<div class="relative group max-w-2xl">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-transparent border border-outline-variant/30 py-6 pl-14 pr-6 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-xl font-light" placeholder="Search the Obsidian Knowledge Base..." type="text"/>
+<div class="absolute inset-y-2 right-2 hidden md:flex items-center pr-4">
+<kbd class="font-mono text-[10px] border border-outline-variant px-2 py-1 rounded text-outline bg-surface-container-lowest">CMD + K</kbd>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Categories Bento Grid -->
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Main Large Category -->
+<div class="md:col-span-2 group relative overflow-hidden bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:border-outline-variant/40 transition-all cursor-pointer">
+<div class="flex flex-col h-full justify-between min-h-[280px]">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<div>
+<h3 class="text-2xl font-bold text-white mb-2">Hardware Calibration</h3>
+<p class="text-on-surface-variant text-sm max-w-xs leading-relaxed">Optimize structural integrity and thermal throughput for Forge-X series units.</p>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:border-outline-variant/40 transition-all cursor-pointer">
+<div class="flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+<div>
+<h3 class="text-xl font-bold text-white mb-1">Order Status</h3>
+<p class="text-on-surface-variant text-xs font-mono opacity-60">TRACK_MANIFEST_V2</p>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:border-outline-variant/40 transition-all cursor-pointer">
+<div class="flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">api</span>
+<div>
+<h3 class="text-xl font-bold text-white mb-1">API Integration</h3>
+<p class="text-on-surface-variant text-xs font-mono opacity-60">ENDPOINT_DOCS_STABLE</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 group relative overflow-hidden bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 hover:border-outline-variant/40 transition-all cursor-pointer">
+<div class="flex flex-col h-full justify-between min-h-[200px]">
+<span class="material-symbols-outlined text-primary text-3xl">security</span>
+<div>
+<h3 class="text-2xl font-bold text-white mb-2">Security Protocols</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Multi-layer encryption, biometric auth, and key rotation standard operating procedures.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 group relative overflow-hidden bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 hover:border-outline-variant/40 transition-all cursor-pointer">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl">terminal</span>
+</div>
+<div class="flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+<div>
+<h3 class="text-xl font-bold text-white mb-1">CLI Tooling</h3>
+<p class="text-on-surface-variant text-xs font-mono opacity-60">FORGE_SHELL_INSTALLER</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Knowledge Base Preview & Asymmetric Layout -->
+<div class="asymmetric-grid gap-20 mb-32 items-start">
+<aside>
+<h2 class="text-xs font-mono uppercase tracking-[0.4em] text-outline mb-10">Popular Protocols</h2>
+<div class="space-y-12">
+<article class="group cursor-pointer">
+<span class="text-outline font-mono text-[10px] mb-2 block">PROTO_ID: 992-X</span>
+<h4 class="text-xl font-medium text-white group-hover:underline underline-offset-4 decoration-primary mb-2 transition-all">Optimizing Carbon-X Thermal Management</h4>
+<p class="text-on-secondary-container text-sm leading-relaxed">A deep dive into heat dissipation algorithms for high-frequency forging operations.</p>
+</article>
+<article class="group cursor-pointer">
+<span class="text-outline font-mono text-[10px] mb-2 block">PROTO_ID: 401-A</span>
+<h4 class="text-xl font-medium text-white group-hover:underline underline-offset-4 decoration-primary mb-2 transition-all">Rotating API Keys via CLI</h4>
+<p class="text-on-secondary-container text-sm leading-relaxed">Execute secure credential rotation without downtime using the Forge SDK.</p>
+</article>
+<article class="group cursor-pointer">
+<span class="text-outline font-mono text-[10px] mb-2 block">PROTO_ID: 112-Q</span>
+<h4 class="text-xl font-medium text-white group-hover:underline underline-offset-4 decoration-primary mb-2 transition-all">Neuro-Link Calibration Faults</h4>
+<p class="text-on-secondary-container text-sm leading-relaxed">Troubleshooting signal jitter in 5th generation bio-mechanical interfaces.</p>
+</article>
+<a class="inline-flex items-center text-sm font-bold text-white uppercase tracking-widest group" href="#">
+                    View Entire Database
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</aside>
+<!-- Direct Assistance Terminal (Ticket Form) -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-2xl">
+<div class="bg-surface-container-high px-6 py-3 flex items-center justify-between border-b border-outline-variant/30">
+<div class="flex items-center space-x-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-on-secondary-container"></div>
+<span class="ml-4 font-mono text-[10px] text-outline uppercase tracking-widest">Submit_Assistance_Ticket.sh</span>
+</div>
+<span class="font-mono text-[10px] text-outline">v2.4.0-STABLE</span>
+</div>
+<div class="p-10">
+<form class="space-y-8">
+<div class="space-y-2">
+<label class="font-mono text-[10px] uppercase text-outline">Subject</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder:text-zinc-700" placeholder="Brief summary of the anomaly..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-mono text-[10px] uppercase text-outline">Priority_Level</label>
+<select class="w-full bg-transparent border-b border-outline-variant py-3 focus:outline-none focus:border-primary transition-colors text-white appearance-none cursor-pointer">
+<option class="bg-background">Low</option>
+<option class="bg-background">High</option>
+<option class="bg-background">Critical</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-mono text-[10px] uppercase text-outline">Asset_ID</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder:text-zinc-700" placeholder="Forge_Unit_001" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-mono text-[10px] uppercase text-outline">Deployment_Logs</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 p-4 rounded-lg focus:outline-none focus:border-primary transition-colors text-mono text-sm text-white placeholder:text-zinc-700 resize-none font-mono" placeholder="Paste your system logs or detailed message here..." rows="6"></textarea>
+</div>
+<div class="flex items-center justify-between pt-4">
+<p class="text-[10px] font-mono text-outline leading-tight">By submitting, you authorize temporary <br/>diagnostic access to Forge telemetry.</p>
+<button class="bg-primary text-on-primary px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all" type="submit">Initialize_Transfer</button>
+</div>
+</form>
+</div>
+</section>
+</div>
+<!-- Live Contact Protocols -->
+<section class="border-t border-outline-variant/10 pt-20">
+<div class="flex flex-col md:flex-row justify-between items-end gap-12">
+<div>
+<h2 class="text-4xl font-bold text-white mb-4 tracking-tight">Direct Sync Protocols</h2>
+<p class="text-on-surface-variant max-w-sm">When automated protocols fail, initiate direct synchronization with our high-priority support neural network.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full md:w-auto">
+<a class="flex flex-col items-start group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors mb-4">chat_bubble</span>
+<span class="font-mono text-[10px] uppercase text-outline mb-1">Live Link</span>
+<span class="text-white font-medium border-b border-white/0 group-hover:border-white transition-all">Chat with Agent</span>
+</a>
+<a class="flex flex-col items-start group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors mb-4">call</span>
+<span class="font-mono text-[10px] uppercase text-outline mb-1">Neural Link</span>
+<span class="text-white font-medium border-b border-white/0 group-hover:border-white transition-all">+1 (800) FORGE-01</span>
+</a>
+<a class="flex flex-col items-start group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors mb-4">alternate_email</span>
+<span class="font-mono text-[10px] uppercase text-outline mb-1">Electronic Mail</span>
+<span class="text-white font-medium border-b border-white/0 group-hover:border-white transition-all">support@obsidianforge.com</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Navigation Shell -->
+<footer class="bg-black border-t border-white/5 w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-screen-2xl mx-auto">
+<div class="text-white font-black text-lg mb-6 md:mb-0 font-headline uppercase tracking-tighter">OBSIDIAN FORGE</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-mono text-[10px] uppercase tracking-widest text-zinc-600 hover:text-zinc-300 transition-colors" href="#">Privacy Policy</a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-zinc-600 hover:text-zinc-300 transition-colors" href="#">Terms of Service</a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-zinc-600 hover:text-zinc-300 transition-colors" href="#">Security</a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-zinc-600 hover:text-zinc-300 transition-colors" href="#">SLA</a>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-zinc-500 opacity-80">
+        © 2024 OBSIDIAN FORGE. ALL RIGHTS RESERVED.
+      </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#e2e2e2",
+                        "surface-container-low": "#1b1b1b",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-bright": "#393939",
+                        "inverse-primary": "#5d5f5f",
+                        "primary": "#ffffff",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-tertiary-container": "#636565",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-surface": "#e2e2e2",
+                        "background": "#131313",
+                        "surface-tint": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-primary": "#2f3131",
+                        "inverse-on-surface": "#303030",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface": "#131313",
+                        "tertiary-container": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "outline-variant": "#444748",
+                        "secondary-container": "#464747",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary": "#ffffff",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary": "#2f3131",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#636565",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#1f1f1f",
+                        "error": "#ffb4ab",
+                        "outline": "#8e9192",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-container": "#b5b5b5",
+                        "secondary": "#c7c6c6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary": "#303031",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "surface-dim": "#131313",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e2"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Geist Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #000000; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(40px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+<div class="flex justify-between items-center h-16 px-6 max-w-screen-2xl mx-auto font-sans tracking-tight antialiased">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-white">OBSIDIAN_FORGE</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-white font-semibold border-b border-white" href="#">Market</a>
+<a class="text-zinc-500 hover:text-zinc-200 transition-colors" href="#">Documentation</a>
+<a class="text-zinc-500 hover:text-zinc-200 transition-colors" href="#">Labs</a>
+<a class="text-zinc-500 hover:text-zinc-200 transition-colors" href="#">Changelog</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-white hover:bg-white/10 transition-all duration-300 scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 text-white hover:bg-white/10 transition-all duration-300 scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-screen-2xl mx-auto">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-12 font-mono text-[10px] uppercase tracking-widest text-outline">
+<a class="hover:text-primary" href="#">Market</a>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary" href="#">Hardware</a>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary-fixed">Forge Alpha Core v2</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Product Gallery -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<div class="aspect-[4/5] bg-surface-container-lowest rounded-xl overflow-hidden group">
+<img alt="Product Hero" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a high-end minimalist black computer processor with glowing white led accents on a dark matte surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjdYM-IZS1GdJL3iInHWIHhlkMbwJ-Wtq3bZ6I5PYlCYvUtUxQuirlupuPLcwgQ66CxverC25f2kZMTKUW2h3ntnIyzjEyew_s56UQ2EltPDLY5eQVcJNvQ9bQcDWJD0XddMgi5PEPczGV3OQBmLwrVGzP1JkUL9RMsi0DH8C_LY_m3FgqMQ7jDRt1jTrG_ETcSIxQ-zta2sMs4BTn1y21gkMnqZuaPhioX1d9S8yckeTx6Rfkf6hIakDp4BBDY1EUDBV82RH-9PY"/>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer border border-white/5 hover:border-white/20 transition-colors">
+<img alt="Detail 1" class="w-full h-full object-cover" data-alt="Side profile of a sleek metallic tech component with cooling fins and polished glass panels in low light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7z7yuzxjg-d_NzOjDw6bQlwFsdBQqKIBtU-gHe0eyCpeMdqD8yeg_7Hc836ZBAEB4qd3r1bmgE_pZRB2TzkUvlxtQXbC51aJvAc6ocmIjwp11nw9VetxPTbglR-BeRPJpfaE4EFYcC5Nt7NuIFQV6AeC4b--FAm8qK_AxdGxz9f4FW7f20yk8yZqIzYBucdGlG0DA1UBKV2r-tSDasR0VBCq66QIQamdcfvxshrXLImjRtBOhPpETfS_NcFTwmDjByWEu1F2DzM"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer border border-white/5 hover:border-white/20 transition-colors">
+<img alt="Detail 2" class="w-full h-full object-cover" data-alt="Intricate circuit board patterns etched into dark obsidian-like material with precise laser-cut edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUR7eWiMhAgRn-4cua7xCmA_cUA_ZtxbCCB4VwfUH32pD4FzGK980uTP0Gt6GFxvD-4E2SOPmV3IfgIGsZBXXRsKFhUOixdwxEXDHvjoBgQJ4D5co4nQgHbIQT2SaHwHSqp5-hQiunnfbHa2kuvFhA910ZUVeXXSxJgwRBLMYgR6mMPtuTG2DiOKaRqnlf4w1EkFi4glYSwUhVAmZ4qFBez0E_rW8C4SdK1cwB03dDNVCqbdvCzpaVR22evLm4mREJP4BQjURYSxI"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer border border-white/5 hover:border-white/20 transition-colors">
+<img alt="Detail 3" class="w-full h-full object-cover" data-alt="Macro shot of golden pin connectors on a black electronic substrate with shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-dPjdpP6AG3WJFqAqOLYrA2UbxeXUw351IXW8TzOQdiGj05YGKdYHo-edP-e69rqZWEYll899pm7ITXEKB4zzbvHjQH9UA-dSRv_t40oeK6KVjpqjI_DRrPdidRSW0hdetE_VJwq_J23sNIYZGYJXYPYX3AnsoiKqMx2Evq4Cig7O5WBiD3H_xwV9fYYl_3205vdbeDx7oMXFowGSNTQItuHJsrdNrSdcEjkzxF-f_JpZyihSoSTM8gFHqYGNI-WlNjfy409v2GQ"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer border border-white/5 hover:border-white/20 transition-colors">
+<img alt="Detail 4" class="w-full h-full object-cover" data-alt="Conceptual shot of a futuristic data storage unit made of dark brushed metal and tinted acrylic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDtQjCXrfSbkOq0tqoUYbLQGaOzgs8kSagy1ZHvpgXoy77YXly3z5Dpah5PvXyDFI0lU1j5C75FggVZrsN_mk9YYGThGHPBOrZvwfmcJOVDfOTPLg0v2EHPKLH8u5drFvpq6SCmcksiRXMUyPSN5v8d3o_ALYrLtcFHo8yvunjKuxvMWE6sOD5ne3o15B1m37-mgSaQgFEpUm1rSJ38nMDjVQgGOBQ5yAJRtT4Ad42qB5SSz6vfc3NMM7K40P5CTJA70Acz_HvX5o"/>
+</div>
+</div>
+</div>
+<!-- Product Info -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="mb-4">
+<span class="bg-primary/10 text-primary font-mono text-[10px] px-2 py-1 rounded tracking-tighter border border-primary/20">EDITION_001</span>
+</div>
+<h2 class="text-[40px] font-bold leading-tight tracking-tighter text-white mb-2">FORGE ALPHA CORE v2</h2>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<span class="text-outline-variant font-mono text-xs">(128 REVIEWS)</span>
+</div>
+<div class="mb-12">
+<p class="font-mono text-3xl font-light text-white">$1,499.00</p>
+<p class="text-outline text-xs mt-2">Available for next-day deployment.</p>
+</div>
+<div class="space-y-4 mb-12">
+<button class="w-full bg-primary text-on-primary font-semibold py-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+                        ADD TO CART
+                    </button>
+<button class="w-full border border-outline-variant/40 text-primary font-semibold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                        WISHLIST
+                    </button>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+<div class="p-4 bg-surface-container-low rounded-lg">
+<p class="text-outline text-[10px] uppercase tracking-widest mb-1">Architecture</p>
+<p class="font-mono text-sm text-white">OBSIDIAN_X64</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-lg">
+<p class="text-outline text-[10px] uppercase tracking-widest mb-1">Frequency</p>
+<p class="font-mono text-sm text-white">5.8 GHZ MAX</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Details & Specs Section -->
+<section class="mt-32">
+<div class="flex gap-12 border-b border-white/5 mb-12">
+<button class="pb-4 text-white font-bold border-b-2 border-white text-sm tracking-tight">SPECIFICATIONS</button>
+<button class="pb-4 text-outline hover:text-white transition-colors text-sm tracking-tight">REVIEWS</button>
+<button class="pb-4 text-outline hover:text-white transition-colors text-sm tracking-tight">DOCUMENTATION</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h3 class="text-xl font-bold mb-6 text-white">THE ENGINE OF PRECISION</h3>
+<p class="text-on-surface-variant leading-relaxed body-lg">
+                        Engineered for zero-latency environments, the Alpha Core v2 utilizes the proprietary Obsidian Forge architecture. Carved from a monolithic silicon substrate, it delivers unprecedented thermal efficiency while maintaining extreme peak performance for heavy computational loads.
+                    </p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between py-3 border-b border-white/5">
+<span class="text-outline text-xs uppercase tracking-widest">Process Technology</span>
+<span class="font-mono text-xs text-white">2nm Obsidian Node</span>
+</div>
+<div class="flex justify-between py-3 border-b border-white/5">
+<span class="text-outline text-xs uppercase tracking-widest">TDP</span>
+<span class="font-mono text-xs text-white">65W Standard / 125W Boost</span>
+</div>
+<div class="flex justify-between py-3 border-b border-white/5">
+<span class="text-outline text-xs uppercase tracking-widest">Core Count</span>
+<span class="font-mono text-xs text-white">24 Performance / 16 Efficiency</span>
+</div>
+<div class="flex justify-between py-3 border-b border-white/5">
+<span class="text-outline text-xs uppercase tracking-widest">Interface</span>
+<span class="font-mono text-xs text-white">LGA 2800 / PCIe 6.0 Ready</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Products -->
+<section class="mt-32">
+<div class="flex items-end justify-between mb-12">
+<h3 class="text-2xl font-bold tracking-tighter text-white">COMPLEMENTARY SYSTEMS</h3>
+<a class="text-outline text-xs uppercase tracking-widest hover:text-white transition-colors" href="#">View All Market</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Related Item 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-xl overflow-hidden mb-4 relative">
+<img alt="Related 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Professional grade tablet with high-resolution screen displaying complex data visualizations on a dark workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZmkLGQzFG9zGn4xjP2yyUCK0GQcCIItnp8cyPhyE6vB7AxnSFj29Yg3N-lpATSxwzNlxp5fj1l4eM5tRBDqHAszHuqxWczoTXC031WnAaBpWAJYAlK1p_Bf05DRC797OgmxNSsJm_MZcwbAwT8bTsEF0mBC_jTPEOJUQ8miykXDPhX9sqA89mW0F6d08iDYDeevA1uTTkR-HYkzyO1jmD2fuFUXpFAl_Squjfy4TaeA5Uezs36JjMkYt9c2UXJP4X_Ce88hSmMg"/>
+<div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg text-black">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Peripherals</p>
+<h4 class="font-bold text-white group-hover:text-primary transition-colors">GRID_PAD X</h4>
+<p class="font-mono text-sm text-outline mt-1">$599</p>
+</div>
+<!-- Related Item 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-xl overflow-hidden mb-4 relative">
+<img alt="Related 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Ultra-wide curved monitor with high contrast ratio and deep blacks showing a code editor in a dark studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCZZz6EQjvKPO6g3y7zHOFJIulA0d4So6G3-nVFjO4UXBeXgV2d1xVcrbQjk-glFhd4wah939gAV80S6VZ7lrn-T9torCpmMHYV3YOPsBbkYZyUQpsEb3HKSLjdec13W_coucy9jHyH4WW0dZ77BJ36nn6bFeQ0fuj3u5Lp9Oy536YeibvCxOS50sbBoRUdK6I1mLshdsdkoqRa8vcO9h9yo7-Gkh4sfEh86-0qwPvd76cYxNlNm1Ayl7ARIYASt3joEFQ7aUlsEc"/>
+<div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg text-black">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Visuals</p>
+<h4 class="font-bold text-white group-hover:text-primary transition-colors">OBSIDIAN 5K CURVE</h4>
+<p class="font-mono text-sm text-outline mt-1">$2,100</p>
+</div>
+<!-- Related Item 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-xl overflow-hidden mb-4 relative">
+<img alt="Related 3" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Minimalist mechanical keyboard with custom dark gray keycaps and subtle white backlight on a desk mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkkDfsdKqxdqya1cljcNDGk3sLAVYCXj_Ec9A9r-M_f7Fl-nYa0TXVKt4sQ5sBzooeNIC0LzQUrmxQcFnY-YLQ5UJHPSspobooT9ivOEBqUGWEa0xUafIPgHpd4TnMMi0-tsXn-gZKYUkBuAyv-aUpn6R38zQyiGlSP6genLDPZ4nyRt7S8_soqmxJM81xT1HQteOI9zgmT18O4mvQvC-5BaYegYc6hFl003Zy28v2srrW7X2YhzN7Xb7eQb0gO-qpgg_2NPLqGs0"/>
+<div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg text-black">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Input</p>
+<h4 class="font-bold text-white group-hover:text-primary transition-colors">LINEAR_KEY V4</h4>
+<p class="font-mono text-sm text-outline mt-1">$249</p>
+</div>
+<!-- Related Item 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-xl overflow-hidden mb-4 relative">
+<img alt="Related 4" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="High-performance liquid cooling system components with translucent tubing and dark matte fittings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYdn7hOfsy6Gaca08qRKH48HXn-HFFigDuN7eMl1S7Cx2PD095BGziAHMxjk_fMtru2yFEkBvZIjfb3CK2zV8BdbTIcFv6BCCsT1DMjjDgrFLY38HnufGfNagU2ZV6KaokMpDT0lAxHlNwrKN3xKQ0Ol6XGlO9_QO36Ix0J7ydf1agFFW-ErHfByyIoEHQbIwFxFnCACUeSIAiXr-k3b24M_76-j8GxCu0bWrbX0X_HL1eT3DEg9N2lo4rfS7OGsXC1qzjV5O8ua8"/>
+<div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-lg text-black">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<p class="font-mono text-[10px] text-outline uppercase tracking-widest mb-1">Cooling</p>
+<h4 class="font-bold text-white group-hover:text-primary transition-colors">CRYOS_LOOP PRO</h4>
+<p class="font-mono text-sm text-outline mt-1">$380</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 pt-20 pb-10 bg-black">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-6 max-w-screen-2xl mx-auto font-mono text-xs uppercase tracking-widest">
+<div class="col-span-2 md:col-span-1">
+<span class="text-lg font-black text-white block mb-4">OBSIDIAN FORGE</span>
+<p class="text-zinc-600 normal-case leading-relaxed max-w-xs">Forging the next generation of developer infrastructure. Engineered for speed. Designed for precision.</p>
+</div>
+<div class="flex flex-col gap-4">
+<p class="text-white mb-2">Systems</p>
+<a class="text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Hardware</a>
+<a class="text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Software</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="text-white mb-2">Security</p>
+<a class="text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Encryption</a>
+<a class="text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Status</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="text-white mb-2">Legal</p>
+<a class="text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Privacy</a>
+<a class="text-zinc-600 hover:text-white transition-colors underline decoration-zinc-700 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Terms</a>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-6 mt-20">
+<p class="text-[10px] text-zinc-600 font-mono tracking-[0.2em] uppercase">© 2024 OBSIDIAN FORGE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

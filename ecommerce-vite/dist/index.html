@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obsidian Forge - Dark eCommerce Platform</title>
+    <meta name="description" content="A premium, minimal eCommerce platform inspired by Vercel's design language." />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Geist+Mono&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container":"#e2e2e2","surface-container-low":"#1b1b1b",
+              "primary":"#ffffff","on-primary":"#2f3131","background":"#131313",
+              "surface":"#131313","surface-variant":"#353535","outline-variant":"#444748",
+              "secondary-container":"#464747","on-surface":"#e2e2e2",
+              "on-surface-variant":"#c4c7c8","surface-container-lowest":"#0e0e0e",
+              "surface-container-high":"#2a2a2a","surface-container":"#1f1f1f",
+              "outline":"#8e9192","secondary":"#c7c6c6","surface-dim":"#131313",
+              "on-background":"#e2e2e2","surface-bright":"#393939",
+              "surface-container-highest":"#353535","tertiary":"#ffffff",
+              "on-tertiary":"#2f3131"
+            },
+            fontFamily:{
+              "headline":["Inter","sans-serif"],"body":["Inter","sans-serif"],
+              "label":["Inter","sans-serif"],"mono":["Geist Mono","monospace"],
+              "sans":["Inter","sans-serif"]
+            },
+            borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+          },
+        },
+      }
+    </script>
+    <style>
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+      html,body,#root{background:#000;color:#fff;font-family:'Inter',sans-serif;min-height:100vh;}
+      .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+    </style>
+    <script type="module" crossorigin src="/assets/index-DizVSnLX.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+

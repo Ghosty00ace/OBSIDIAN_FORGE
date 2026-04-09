@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Tracking | Obsidian Forge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#c6c6c7",
+                        "secondary-container": "#464747",
+                        "on-secondary": "#303031",
+                        "tertiary-container": "#e2e2e2",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-container": "#636565",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-low": "#1b1b1b",
+                        "tertiary": "#ffffff",
+                        "on-primary": "#2f3131",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "primary-container": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353535",
+                        "on-secondary-container": "#b5b5b5",
+                        "inverse-on-surface": "#303030",
+                        "on-primary-fixed": "#1a1c1c",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "surface-container": "#1f1f1f",
+                        "primary": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-bright": "#393939",
+                        "inverse-surface": "#e2e2e2",
+                        "on-background": "#e2e2e2",
+                        "on-primary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#464747",
+                        "secondary": "#c7c6c6",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed": "#e2e2e2",
+                        "on-primary-container": "#636565",
+                        "on-surface-variant": "#c4c7c8",
+                        "outline-variant": "#444748",
+                        "surface-dim": "#131313",
+                        "outline": "#8e9192",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Geist Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .terminal-glow {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-xl shadow-[0_60px_60px_rgba(226,226,226,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white font-headline">Obsidian Forge</div>
+<div class="hidden md:flex items-center space-x-8 font-['Inter'] tracking-tight">
+<a class="text-[#e2e2e2]/60 hover:text-white transition-colors" href="#">Marketplace</a>
+<a class="text-[#e2e2e2]/60 hover:text-white transition-colors" href="#">Documentation</a>
+<a class="text-[#e2e2e2]/60 hover:text-white transition-colors" href="#">Ecosystem</a>
+<a class="text-[#e2e2e2]/60 hover:text-white transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="space-y-4">
+<div class="font-mono text-xs uppercase tracking-[0.3em] text-secondary">Shipment Protocol Alpha-9</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-white">TRACKING_ID: #OF-9942-X</h1>
+</div>
+<div class="flex flex-col items-start md:items-end gap-2 border-l md:border-l-0 md:border-r border-[#222222] pl-6 md:pl-0 md:pr-6">
+<span class="font-mono text-xs uppercase text-secondary">Estimated Arrival</span>
+<span class="text-3xl font-bold text-white">OCT 24, 2024</span>
+</div>
+</header>
+<!-- Progress Bar Bento -->
+<section class="mb-12">
+<div class="bg-surface-container-lowest border border-[#222222] rounded-xl p-10 overflow-x-auto">
+<div class="min-w-[800px] flex justify-between relative">
+<!-- Progress Line Background -->
+<div class="absolute top-5 left-0 w-full h-[2px] bg-[#222222] z-0"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-5 left-0 w-[66%] h-[2px] bg-primary z-0 shadow-[0_0_15px_rgba(255,255,255,0.4)]"></div>
+<!-- Step 1: Initialized -->
+<div class="relative z-10 flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-primary">Initialized</div>
+</div>
+<!-- Step 2: Processing -->
+<div class="relative z-10 flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-primary">Processing</div>
+</div>
+<!-- Step 3: Built -->
+<div class="relative z-10 flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-primary">Built</div>
+</div>
+<!-- Step 4: Quality Control -->
+<div class="relative z-10 flex flex-col items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">Quality Control</div>
+</div>
+<!-- Step 5: Shipped -->
+<div class="relative z-10 flex flex-col items-center gap-4 opacity-40">
+<div class="w-10 h-10 rounded-full bg-[#1b1b1b] border border-[#444748] flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-white">Shipped</div>
+</div>
+<!-- Step 6: Delivered -->
+<div class="relative z-10 flex flex-col items-center gap-4 opacity-40">
+<div class="w-10 h-10 rounded-full bg-[#1b1b1b] border border-[#444748] flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-white">Delivered</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Map and Terminal Column -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Visual Representation / Map -->
+<div class="bg-[#0e0e0e] rounded-xl border border-[#222222] overflow-hidden aspect-video relative group">
+<img alt="Shipment Path Map" class="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity scale-105 group-hover:scale-100 transition-transform duration-[2s]" data-alt="Minimalist grayscale satellite map showing a dark urban landscape with glowing white connection lines representing a shipping route" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjHdkJeNTavzJUYJvQ6n-D55Ok1-JiIFWsnq1q2oL8_bqi35MjpPD9Snzg6y7Vepcki6yoZ1QJfaR6lLO4NeD-eSQrnQAdlU064z2hongwOnmJguQoXNzq6O3TWq4-WFNwn3SZsiXdoEfQjlLU0Ch2beK338YAQnglo0-ZF1XVKoj5fb-7qohq3DDOKqnINKm9bIvlZQ9pOc4t-h8expFRrBsDER4EQJoyRHKtbVIqcfiXjorN2guZ5RC3sXFsYmrLu48oE3Pd86o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<!-- Tracking Overlay -->
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div class="space-y-2">
+<div class="font-mono text-[10px] text-primary/60 uppercase">Origin</div>
+<div class="text-xl font-bold">FORGE_CENTRAL (SFO)</div>
+</div>
+<div class="h-px bg-white/20 flex-grow mx-8 mb-3 relative">
+<div class="absolute right-0 -top-1 w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_10px_#fff]"></div>
+</div>
+<div class="space-y-2 text-right">
+<div class="font-mono text-[10px] text-primary/60 uppercase">Destination</div>
+<div class="text-xl font-bold">NODE_ALPHA (NYC)</div>
+</div>
+</div>
+</div>
+<!-- Terminal Log -->
+<div class="bg-surface-container-lowest border border-[#222222] rounded-xl p-8 font-mono text-sm">
+<div class="flex items-center justify-between mb-6 border-b border-[#222222] pb-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="uppercase tracking-widest text-xs text-secondary">Live System Log</span>
+</div>
+<span class="text-white/40 text-[10px]">AUTH_LEVEL: OVERRIDE</span>
+</div>
+<div class="space-y-4 max-h-[300px] overflow-y-auto pr-4 terminal-glow">
+<div class="flex gap-6">
+<span class="text-white/30 whitespace-nowrap">2024-10-21 14:02:44</span>
+<span class="text-white"><span class="text-primary">[SUCCESS]</span> Quality assurance certification complete. All nodes operating at 100% capacity.</span>
+</div>
+<div class="flex gap-6">
+<span class="text-white/30 whitespace-nowrap">2024-10-21 09:15:12</span>
+<span class="text-white"><span class="text-primary">[EVENT]</span> Product transferred to Assembly Phase 4 (Final Integration).</span>
+</div>
+<div class="flex gap-6">
+<span class="text-white/30 whitespace-nowrap">2024-10-20 18:30:00</span>
+<span class="text-white"><span class="text-primary">[UPDATE]</span> Core logic components initialized and verified.</span>
+</div>
+<div class="flex gap-6">
+<span class="text-white/30 whitespace-nowrap">2024-10-20 11:45:22</span>
+<span class="text-white"><span class="text-primary">[SYSTEM]</span> Material requisition approved. Obsidian block carved.</span>
+</div>
+<div class="flex gap-6">
+<span class="text-white/30 whitespace-nowrap">2024-10-19 23:59:59</span>
+<span class="text-white"><span class="text-primary">[INIT]</span> Order request received. Forging sequence engaged.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Shipment Content Column -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-low border border-[#222222] rounded-xl p-8 sticky top-28">
+<h3 class="text-2xl font-bold mb-8 tracking-tight">SHIPMENT_MANIFEST</h3>
+<div class="space-y-8">
+<!-- Item 1 -->
+<div class="group">
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 bg-surface-container-highest border border-outline-variant/15 overflow-hidden flex-shrink-0">
+<img alt="Obsidian Core Prototype" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Macro photography of a sleek black carbon fiber geometric device with glowing white LED accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv56IVdOW-Fp_t3QjOUzRKZjg0W_tuJBOeZjgajXX_Aelw9wcAY3Wb9oqH2JWF1OwUd4IrpDMlSf35WVLoBSO1W543F4C3qIqp7-MnVvRoSuW1SqpEb7hD7LBBqLWT2M7ITPKrtIc9RuugyKR19V7gJhowH_pi9BUu18iIUyNibKP_mxdqEb618Lm0HqoFX7f2ITy6BZ6iV4ZQSMqGIY_e0mY2SpVYNfAPnrQEXUS_NTTgF6WIDeaWFNWkbLg1vhwCeocm2xrGusA"/>
+</div>
+<div class="space-y-1">
+<div class="font-bold text-white uppercase tracking-tight">Obsidian Core Prototype</div>
+<div class="font-mono text-[10px] text-white/40">SKU: OC-X1-BLK</div>
+<div class="text-xs text-white/60">Quantity: 01</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group">
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 bg-surface-container-highest border border-outline-variant/15 overflow-hidden flex-shrink-0">
+<img alt="Neural Interface Bridge" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Extreme close up of a circuit board with translucent glass components and high-contrast black and white textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTXNRM5WWyJQMe-kCLvA5KbK6xNMDO348l9ezvpURMtzptlZ4HSk3dQQmRlvcddgO-4FqGCgA9nIrGzOaWkGKBT7KpeQbG-gGgKtsDNkH3MHoz66UAngl6lCCBemrCIcFB6QCSrT18r7hqdatKdii6EocJkhkfH6s7QyayDzSwbMSSyE3AunBomlrzTU9cF9PrehHptGBi2YF3x4YHlayzAydbKNaXoMptytsdGT2RvodfQLP_Mf-4Hb0K108-5x__XJzxDaXdmZs"/>
+</div>
+<div class="space-y-1">
+<div class="font-bold text-white uppercase tracking-tight">Neural Interface Bridge</div>
+<div class="font-mono text-[10px] text-white/40">SKU: NI-B2-V3</div>
+<div class="text-xs text-white/60">Quantity: 02</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group">
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 bg-surface-container-highest border border-outline-variant/15 overflow-hidden flex-shrink-0">
+<img alt="Expansion Module" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract view of a technological hardware module with dark metallic finishes and sharp architectural angles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEOqv1wocNt3M6NAkZ6XICzoZ4Vo99izek06Z8sQWzvGE0sMwRjemDnK337WhRmGfL5riliMoOm_SqlhMnCrsRB3FOVMNgBM4j7IPmo2_QkzKo7fg7jqgyTTxaVBzyD-Odm9qxF-UCKjguBURM6CU7FFyhPSNHQhGSNP0AiuFvOdlJEuBd-WIEtKqvTBcvosWz44OG_pfMvbzcoMd-GkjT5pu6fDBP1Wpb1jASPtZ1clbcVJ2RD6eTwfXJDMzxIP7n1xftK7eh2b0"/>
+</div>
+<div class="space-y-1">
+<div class="font-bold text-white uppercase tracking-tight">Forge Expansion Module</div>
+<div class="font-mono text-[10px] text-white/40">SKU: FE-M1-ULTRA</div>
+<div class="text-xs text-white/60">Quantity: 01</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-[#222222] space-y-4">
+<div class="flex justify-between font-mono text-xs text-secondary">
+<span>TOTAL_WEIGHT</span>
+<span>4.82 KG</span>
+</div>
+<div class="flex justify-between font-mono text-xs text-secondary">
+<span>CARRIER</span>
+<span>PRECISION_LOGISTICS</span>
+</div>
+<button class="w-full mt-6 bg-primary text-on-primary py-4 font-bold text-sm hover:bg-white/90 active:scale-[0.98] transition-all rounded-lg">
+                            DOWNLOAD_INVOICE_PDF
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full border-t border-[#444748]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full font-['Geist_Mono'] text-xs uppercase tracking-widest">
+<div class="font-bold text-white mb-6 md:mb-0">Obsidian Forge</div>
+<div class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<a class="text-[#e2e2e2]/40 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#e2e2e2]/40 hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-[#e2e2e2]/40 hover:text-white transition-colors" href="#">API Status</a>
+<a class="text-[#e2e2e2]/40 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<div class="text-[#e2e2e2]/40 text-center md:text-right">
+                © 2024 Obsidian Forge. Built for high-performance precision.
+            </div>
+</div>
+</footer>
+</body></html>
