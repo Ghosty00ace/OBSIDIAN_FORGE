@@ -18,9 +18,10 @@ function AuthFrame({ title, subtitle, alternate, children, social = false, onSoc
         </div>
         <div className="bg-[#0e0e0e] border border-[#222] rounded-xl p-10 space-y-6">
           {social ? (
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-3">
               <button type="button" onClick={() => onSocial?.('google')} className="border border-white/10 rounded-lg py-3 text-sm font-semibold hover:bg-white/5 transition-all">Google</button>
               <button type="button" onClick={() => onSocial?.('github')} className="border border-white/10 rounded-lg py-3 text-sm font-semibold hover:bg-white/5 transition-all">GitHub</button>
+              <button type="button" onClick={() => onSocial?.('facebook')} className="border border-white/10 rounded-lg py-3 text-sm font-semibold hover:bg-white/5 transition-all">Facebook</button>
             </div>
           ) : null}
           {social ? <div className="text-center text-zinc-600 text-xs uppercase tracking-widest">or use email</div> : null}
